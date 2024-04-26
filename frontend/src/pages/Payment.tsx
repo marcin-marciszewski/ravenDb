@@ -59,6 +59,15 @@ const Payment: FC = () => {
       });
       return;
     }
+    if (!parkingArea) {
+      MySwal.fire({
+        title: "We've got a problem!",
+        text: 'No parking area',
+        icon: 'warning',
+      });
+      return;
+    }
+
     setFee(0);
     setShowResult(false);
     setCurrency('USD');
